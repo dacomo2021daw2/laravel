@@ -8,11 +8,21 @@ Requereix tenir instal·lat previament:
 
 ## Pasos a seguir
 
-1. Inicia la màquina virtual amb les ordres de `Vagrant`:
+1. Crea una carpeta de nom m07uf3 i entra dins de la carpeta
+	
+	mkdir m07uf3
+	cd m07uf3
+
+2. Clona el diposit laravel i accedeix a la carpeta creada:
+	
+	git clone https://github.com/dacomo2021daw2/laravel.git
+	cd laravel
+
+3. Inicia la màquina virtual amb les ordres de `Vagrant`:
 
 	vagrant up
 
-2. Accedeix a la màquina virtual per SSH, per poder realitzar el curs:
+4. Accedeix a la màquina virtual per SSH, per poder realitzar el curs:
 
 	vagrant ssh
 
