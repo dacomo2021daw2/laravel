@@ -1,0 +1,27 @@
+# DAW2 M07UF3 2021-2022 FJE CLOT
+
+## Requisits
+
+Requereix tenir instal·lat previament:
+1. Virtualbox https://www.virtualbox.org/
+2. Vagrant https://www.vagrantup.com/
+
+## Pasos a seguir
+
+1. Inicia la màquina virtual amb les ordres de `Vagrant`:
+
+	vagrant up
+
+2. Accedeix a la màquina virtual per SSH, per poder realitzar el curs:
+
+	vagrant ssh
+
+## Usuaris
+
+1. Usuari vagrant amb contrasenya vagrant
+
+2. Per accedir com a usuari root, executa com usuari vagrant:
+
+	sudo su -
+
+
