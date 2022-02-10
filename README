@@ -1,0 +1,61 @@
+# DAW2 M08UF1 2021-2022 FJE CLOT
+
+## Requisits
+
+Requereix tenir instal·lat previament:
+1. Git https://git-scm.com/
+2 Virtualbox https://www.virtualbox.org/
+3. Vagrant https://www.vagrantup.com/
+
+## Pasos a seguir
+
+1. Clonar el repositori GIT i accedir al directori de treball de la pràctica:
+
+	mkdir m08uf1
+	cd m08uf1
+	git clone https://github.com/dacomo2021daw2/m08uf1pr2.git
+	cd m08uf1pr2
+
+
+2. Canvia el nom de sistema de la màquina virtual:
+
+	2.1 Obre Vagrantfile amb nano, geany, qualsevol IDE o qualsevol editor de texte pla.
+	2.2 Edita el paràmete config.vm.hostname i fes que el seu nou valor sigui:
+		config.vm.hostname = "xxyyzz2021daw2"
+	NOTA: xxyyzz són les 2 primeres lletres del teu nom, 1r cognom i 2n cognom
+
+3. Afegeix el servidor MySQL mariadb-server, el client MySQL mariadb-client i el mòdul de MySQL per PHP
+
+	3.1 Obre Vagrantfile amb nano, geany, qualsevol IDE o qualsevol editor de texte pla.
+	3.2 Aprovisiona el programari extra a la secció config.vm.provision afegint:
+		apt-get install -y mariadb-server mariadb-client
+		apt-get install -y php7.3-mysql
+
+4. Afegeix un port forwarding per exposar el port 443 de la màquina virtual al port 8443 de la màquina host:
+
+	4.1 Obre Vagrantfile amb nano, geany, qualsevol IDE o qualsevol editor de texte pla. 
+	4.2 Afegeix config.vm.network "forwarded_port", guest: 443, host: 8443
+
+5. Inicia la màquina virtual amb les ordres de `Vagrant`:
+
+	vagrant up
+
+
+6. Accedeix a la màquina virtual per SSH, per poder realitzar el curs:
+
+	vagrant ssh
+
+
+## Problemes amb vagrant ssh
+
+Si no aconseguim accedir amb vagrant ssh, realitza les següents passes:
+
+1. Accedeix a Virtualbox, selecciona la màquina virtual de la formació devops docker i prem el botó de "Mostra". 
+2. Accedeix a la pantalla de terminal de la màquina virtual de Virtuabbox. Això desbloquejarà la creació de la màquina virtual.
+3. Torna a la línia d'ordres i des de dins del directori m08uf1pr2, executa:
+
+vagrant provision
+vagrant ssh
+
+Tanbé podeu accedir directament a la màquina virtual, via Virtualbox, amb usuari `vagrant` i contrasenya `vagrant`.
+
