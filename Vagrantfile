@@ -6,7 +6,8 @@ Vagrant.configure("2") do |config|
     v.name = "laravel"
     v.memory = 2048
     v.cpus = 1
-    v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']     
+    v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    #config.vm.synced_folder "directori_màquina_física", "directori_màquina_vagrant"
   end
 
   config.vm.network "forwarded_port", guest: 80, host: 8080
